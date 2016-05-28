@@ -1,0 +1,46 @@
+=====================================
+=                                   =
+=                                   =
+=              Updates              =
+=                                   =
+=                                   =
+=====================================
+
+5/26/2016: Build 0.0.1
+Tested in Golang 1.2.1 on Linux
+
+First engine build. Includes engine with working random bot.
+Time still not added.
+Engine is essentially built for building AI.
+Engine does not know how to handle two AIs at the moment.
+Possible bugs.
+
+Please screenshot any bugs found while using so I can fix them!
+
+To Do:
+- Debug (obviously)
+	- Possible bugs due to Ko
+	- Possible bugs in end game (counting points)
+- Install Golang on linux server
+- Add time
+- Add options for displaying things (points, coordinate system, etc.)
+- Add end game counting points (in progress)
+- Add error return for illegal moves
+- Add in striking system for illegal moves
+- Write JavaScript/HTML for Go GUI to be displayed on server
+	- Will include uploading/updating AI
+	- Will include playback of previous AI games
+	- Will include a leaderboard for current top AI
+
+5/27/2016:
+- Added options
+- Added timing
+- Added striking system
+- End gaming counting finished but dead chains still break counting territory
+- Nothing has been tested so bugs almost definitely exist
+- Golang is not able to be installed on the linux server!
+- Looking for an alternative way to have AI compete
+
+To Do:
+- Add a debugging mode to debug engine functions
+- This help fix bugs in end game counting and ensure Ko is working properly
