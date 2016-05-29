@@ -145,8 +145,8 @@ func main() {
 	} else if whoWon == 2 {
 		fmt.Println("Player 2 won by fault in player 1")
 	} else {
-	endGame(sliceMain)
-	fmt.Println("\nEnd Game Score\nPlayer One Score:", scoreOne, "\nPlayer BOT Score:", scoreTwo)
+		endGame(sliceMain)
+		fmt.Println("\nEnd Game Score\nPlayer One Score:", scoreOne, "\nPlayer BOT Score:", scoreTwo)
 	}
 	
 	/*

@@ -37,6 +37,7 @@ Game will be played on a 19x19 board.
 
 To run engine with your AI, type "go run engine.go <NAME OF AI>.go" .
 Your AI should NOT have a main function. Only a returnMove function.
-There is no point in changing the engine as a slightly different engine will be used for competition.
+You can change the engine if you would like but only your AI will be submitted.
+A slightly different engine will be used for the competition that can run two AIs.
 
 Good luck!
