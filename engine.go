@@ -53,7 +53,7 @@ func main() {
 			text, _ := reader.ReadString('\n')
 			if text == "stop\n" {
 				break
-			} else if text == "-1 -1\n" {
+			} else if text == "-1 -1\n" || text == "-1 -1\r\n" {
 				if pass {
 					break
 				} else {
@@ -177,7 +177,11 @@ func checkIllegal(check []int) bool {
 }
 
 func runParse(text string, sliceMain [][]int) []int {
-	text = text[:len(text)-1]
+	if isWindows() {
+		text = text[:len(text)-2]
+	} else {
+		text = text[:len(text)-1]
+	}
 	s := strings.Split(text, " ")
 	n := make([]int, 2)
 	a, err := strconv.ParseInt(s[0], 10, 64)
@@ -414,6 +418,10 @@ func whoLand(sliceMain [][]int, chain [][]int, player int) bool {
 	return true
 }
 
+func isWindows() bool {
+    return os.PathSeparator == '\\' && os.PathListSeparator == ';'
+}
+
 func findEndgame(sliceMain [][]int) [][][]int{
 	sliceOfChains := make([][][]int, 1)
 	for i := 0; i < 1; i++ {
@@ -472,3 +480,75 @@ func runScoring(sliceMain [][]int, chains [][][]int, player int) [][]int{
 	}
 	return sliceMain
 }
+/*
+func deadStrings(sliceMain [][]int, chains [][][]int) [][]int {
+	var sliceTrial [][]int
+	copy(sliceTrial, sliceMain)
+	checkOne := false
+	var checkTwo bool
+	var f int
+	var g int
+	var h int
+	var i int
+	for x := range chains {
+		checkTwo = false
+		for a := range chains[x]{
+			if checkTwo {
+				break
+			}
+			for b := range chains[x][a] {
+				if a == 0 {
+					f = 0
+				}
+				if a == 18 {
+					g = 0
+				}
+				if b == 0 {
+					h = 0
+				}
+				if b == 18 {
+					i = 0
+				}
+				if chains[x][a][b] != 0 {
+					if sliceMain[a+g][b] == 0 {
+						if checkOne {
+							checkTwo = true
+							break
+						} else {
+							checkOne = true
+						}
+					}
+					if sliceMain[a][b+i] == 0 {
+						if checkOne {
+							checkTwo = true
+							break
+						} else {
+							checkOne = true
+						}
+					}
+					if sliceMain[a-f][b] == 0 {
+						if checkOne {
+							checkTwo = true
+							break
+						} else {
+							checkOne = true
+						}
+					}
+					if sliceMain[a][b-h] == 0 {
+						if checkOne {
+							checkTwo = true
+							break
+						} else {
+							checkOne = true
+						}
+					}
+				}
+			}
+		}
+		if !checkTwo {
+			
+		}
+	}
+
+}
+*/

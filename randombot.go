@@ -10,7 +10,7 @@ func returnMove(sliceMain [][]int) []int {
 	for {
 		a = rand.Intn(19)
 		b = rand.Intn(19)
-		fmt.Println("BOT moved:",a,b)
+		fmt.Println("BOT moved:",b,a)
 		if sliceMain[a][b] == 0 {
 			return []int{a,b}
 		}

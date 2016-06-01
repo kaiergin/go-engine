@@ -11,6 +11,7 @@
 - Engine will first update AI then wait for a response
 
 Build 0.0.1
+Coded by Kai Ergin
 
 Rules and Info:
 AI has 60 seconds to make a move. If no move is made, AI automatically loses.
