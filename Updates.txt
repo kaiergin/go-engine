@@ -6,9 +6,11 @@
 =                                   =
 =====================================
 
-5/26/2016: Build 0.0.1
-Tested in Golang 1.2.1 on Linux
+Current Build:
+6/11/2016 - Build 0.0.2
+Tested in Golang 1.2.1 on Linux Mint
 
+5/26/2016:
 First engine build. Includes engine with working random bot.
 Time still not added.
 Engine is essentially built for building AI.
@@ -44,3 +46,24 @@ To Do:
 To Do:
 - Add a debugging mode to debug engine functions
 - This help fix bugs in end game counting and ensure Ko is working properly
+
+Update Plans / Found bugs 6/3/2016
+- Break after 3 strikes on Ko
+- If AI attempts to change global score variables, automatically loses
+- Add in extra global variables for AIs to access
+	- What turn is it? (1st, 2nd, 3rd…)
+- Tell the AI who it is (player 1 or 2)
+- Bug in Ko due to copy function, need to initialize Ko slices
+
+6/11/2016:
+- Found bugs / Plans from 6/3/2016 fixed / added
+- Branches merged (Dead chain function still in progress but will be added)
+- Input bug for Windows has been fixed
+
+Server Updates:
+- Moved over to AWS hosting
+- Go installed and plans on hosting competition on server will happen
+
+To Do:
+- Tell the AI who it is
+- Finish dead chain function

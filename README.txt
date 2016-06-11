@@ -8,9 +8,9 @@
 
 - Built for a Go AI competition
 - Written in Golang
-- Engine will first update AI then wait for a response
+- Engine will pass arguments to AI then wait for a response
 
-Build 0.0.1
+Build 0.0.2
 Coded by Kai Ergin
 
 Rules and Info:

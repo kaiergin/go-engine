@@ -12,23 +12,40 @@ import (
 var mainChain [][]int
 var scoreOne int = 0
 var scoreTwo int = 0
+var move int = 1
 
 func main() {
 	var strike1 int = 0
 	var strike2 int = 0
 	var ko1 [][]int
+	for x := range ko1 {
+		sliceMain[x] = make([]int, 19)
+		for y := range ko1[x]{
+			ko1[x][y] = 0
+		}
+	}
 	var ko2 [][]int
+	for x := range ko2 {
+		sliceMain[x] = make([]int, 19)
+		for y := range ko2[x]{
+			ko2[x][y] = 0
+		}
+	}
 	var chains [][][]int
 	var whoWon int
 	var t0 time.Time
 	var t1 time.Time
 	var n []int
+	var tempScore1 int
+	var tempScore2 int
+	var tempMove int
 	
 	// OPTIONS
 	var debug bool = true
 	var timing bool = false
 	var printScore bool = true
 	var showCoords bool = false
+	var moveCount bool = false
 	
 	reader := bufio.NewReader(os.Stdin)
 	sliceMain := make([][]int, 19)
@@ -73,6 +90,10 @@ func main() {
 						scoreOne--
 						revert1 = false
 						strike1++
+						if strike1 == 3 {
+							whoWon = 2
+							break
+						}
 					} else {
 						copy(ko1, sliceMain)
 					}
@@ -91,12 +112,15 @@ func main() {
 		revert2 = true
 		
 		if revert1 {
+			tempScore1 = scoreOne
+			tempScore2 = scoreTwo
+			tempMove = move
 			
 			t0 = time.Now()
 			nextMove = returnMove(sliceMain)
 			t1 = time.Now()
 			
-			if t1.Sub(t0) > 60000000000 && timing{
+			if t1.Sub(t0) > 60000000000 && timing || tempScore1 != scoreOne || tempScore2 != scoreTwo || tempMove != move{
 				whoWon = 1
 				break
 			}
@@ -120,6 +144,10 @@ func main() {
 						scoreTwo--
 						revert2 = false
 						strike2++
+						if strike2 == 3 {
+							whoWon = 1
+							break
+						}
 					} else {
 						copy(ko2, sliceMain)
 					}
