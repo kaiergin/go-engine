@@ -17,14 +17,14 @@ var move int = 1
 func main() {
 	var strike1 int = 0
 	var strike2 int = 0
-	var ko1 [][]int
+	ko1 := make([][]int, 19)
 	for x := range ko1 {
 		sliceMain[x] = make([]int, 19)
 		for y := range ko1[x]{
 			ko1[x][y] = 0
 		}
 	}
-	var ko2 [][]int
+	ko2 := make([][]int, 19)
 	for x := range ko2 {
 		sliceMain[x] = make([]int, 19)
 		for y := range ko2[x]{
