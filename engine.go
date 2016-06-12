@@ -19,14 +19,14 @@ func main() {
 	var strike2 int = 0
 	ko1 := make([][]int, 19)
 	for x := range ko1 {
-		sliceMain[x] = make([]int, 19)
+		ko1[x] = make([]int, 19)
 		for y := range ko1[x]{
 			ko1[x][y] = 0
 		}
 	}
 	ko2 := make([][]int, 19)
 	for x := range ko2 {
-		sliceMain[x] = make([]int, 19)
+		ko1[x] = make([]int, 19)
 		for y := range ko2[x]{
 			ko2[x][y] = 0
 		}
