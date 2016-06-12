@@ -26,7 +26,7 @@ func main() {
 	}
 	ko2 := make([][]int, 19)
 	for x := range ko2 {
-		ko1[x] = make([]int, 19)
+		ko2[x] = make([]int, 19)
 		for y := range ko2[x]{
 			ko2[x][y] = 0
 		}
