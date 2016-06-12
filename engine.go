@@ -88,7 +88,7 @@ func main() {
 					if testEqu(ko1,sliceMain) {
 						printBoard(sliceMain,showCoords)
 						printBoard(ko1,showCoords)
-						copyBoard(sliceMain, ko2)
+						sliceMain = copyBoard(sliceMain, ko2)
 						scoreOne--
 						revert1 = false
 						strike1++
@@ -97,7 +97,7 @@ func main() {
 							break
 						}
 					} else {
-						copyBoard(ko1, sliceMain)
+						ko1 = copyBoard(ko1, sliceMain)
 					}
 				} else {
 					revert1 = false
@@ -142,7 +142,7 @@ func main() {
 					runDelete(sliceMain, chains, 2)
 					pass = false
 					if testEqu(ko2,sliceMain) {
-						copyBoard(sliceMain, ko1)
+						sliceMain = copyBoard(sliceMain, ko1)
 						scoreTwo--
 						revert2 = false
 						strike2++
@@ -151,7 +151,7 @@ func main() {
 							break
 						}
 					} else {
-						copyBoard(ko2, sliceMain)
+						ko2 = copyBoard(ko2, sliceMain)
 						if moveCount {
 							move++
 						}
@@ -213,7 +213,7 @@ func copyBoard(a [][]int, b [][]int) [][]int {
 	for x := range a {
 		copy(a[x],b[x])
 	}
-	return b
+	return a
 }
 
 func runParse(text string, sliceMain [][]int) []int {
