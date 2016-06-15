@@ -67,3 +67,11 @@ Server Updates:
 To Do:
 - Tell the AI who it is
 - Finish dead chain function
+
+6/12/2016:
+- More bugs in Ko. Should be fixed now
+- Placing piece in space already taken should be fixed
+- AI now has a function it can call for information
+	- Who it is
+	- What turn it is
+	- What the score is

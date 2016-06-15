@@ -86,8 +86,6 @@ func main() {
 					runDelete(sliceMain, chains, 1)
 					pass = false
 					if testEqu(ko1,sliceMain) {
-						printBoard(sliceMain,showCoords)
-						printBoard(ko1,showCoords)
 						sliceMain = copyBoard(sliceMain, ko2)
 						scoreOne--
 						revert1 = false
