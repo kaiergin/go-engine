@@ -13,7 +13,7 @@ var mainChain [][]int
 var scoreOne int = 0
 var scoreTwo int = 0
 var move int = 1
-var player int = 0
+var whoAmI int = 0
 
 func main() {
 	var strike1 int = 0
@@ -67,7 +67,7 @@ func main() {
 	for mainLoop {
 		printBoard(sliceMain,showCoords)
 		if debug && revert2{
-			player = 1
+			whoAmI = 1
 			fmt.Print("-> ")
 			text, _ := reader.ReadString('\n')
 			if text == "stop\n" {
@@ -117,7 +117,7 @@ func main() {
 			tempScore1 = scoreOne
 			tempScore2 = scoreTwo
 			tempMove = move
-			player = 2
+			whoAmI = 2
 			
 			t0 = time.Now()
 			nextMove = returnMove(sliceMain)
