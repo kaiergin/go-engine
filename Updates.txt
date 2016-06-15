@@ -71,7 +71,7 @@ To Do:
 6/12/2016:
 - More bugs in Ko. Should be fixed now
 - Placing piece in space already taken should be fixed
-- AI now has a function it can call for information
-	- Who it is
-	- What turn it is
-	- What the score is
+- AI now has a variables it can access for information
+	- Who it is (player)
+	- What turn it is (move)
+	- What the score is (scoreOne or scoreTwo)
