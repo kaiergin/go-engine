@@ -72,6 +72,6 @@ To Do:
 - More bugs in Ko. Should be fixed now
 - Placing piece in space already taken should be fixed
 - AI now has a variables it can access for information
-	- Who it is (player)
+	- Who it is (whoAmI)
 	- What turn it is (move)
 	- What the score is (scoreOne or scoreTwo)

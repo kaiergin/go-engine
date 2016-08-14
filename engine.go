@@ -80,7 +80,7 @@ func main() {
 				}
 			} else {
 				n = runParse(text, sliceMain)
-				if checkIllegal(n) {
+				if checkIllegal(n) && checkSpot(sliceMain, n) {
 					sliceMain = makeMove(n[0], n[1], sliceMain, 1)
 					chains = findChains(sliceMain,2)
 					runDelete(sliceMain, chains, 2)
@@ -135,7 +135,7 @@ func main() {
 					pass = true
 				}
 			} else {
-				if checkIllegal(nextMove) {
+				if checkIllegal(nextMove) && checkSpot(sliceMain, nextMove) {
 					sliceMain = makeMove(nextMove[0], nextMove[1], sliceMain, 2)
 					chains = findChains(sliceMain,1)
 					runDelete(sliceMain, chains, 1)
@@ -215,6 +215,13 @@ func copyBoard(a [][]int, b [][]int) [][]int {
 		copy(a[x],b[x])
 	}
 	return a
+}
+
+func checkSpot(sliceMain [][]int, check []int) bool {
+	if sliceMain[check[0]][check[1]] != 0 {
+		return false
+	}
+	return true
 }
 
 func runParse(text string, sliceMain [][]int) []int {
